@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "adc053e3-8288-4b8d-9e53-f2fa7d1fcf52",
+		"name": "Trabajo Final Base de Datos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20658517"
+	},
+	"item": [
+		{
+			"name": "persons",
+			"item": [
+				{
+					"name": "get all persons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/persons/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"persons",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add person",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"12345681\",\r\n    \"name\": \"Jorge\",\r\n    \"lastname\": \"Gracia\",\r\n    \"phone\": 3804731415,\r\n    \"email\": \"marcol2c4@gmail.com\",\r\n    \"address\": \"street 123\",\r\n    \"date_birth\": \"1984-01-04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/persons/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"persons",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete person by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/persons/63587eb75fa7e72fca5d3df6",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"persons",
+								"63587eb75fa7e72fca5d3df6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit person by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"marco andres\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/persons/63587e305fa7e72fca5d3df3",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"persons",
+								"63587e305fa7e72fca5d3df3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get person by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/api/persons/id/6358730a941ad31f3998d8ef",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"persons",
+								"id",
+								"6358730a941ad31f3998d8ef"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "30660275",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get person by dni",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/persons/dni/30660275",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"persons",
+								"dni",
+								"30660275"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "processes",
+			"item": [
+				{
+					"name": "get all processes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/processes",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"processes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add process",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"30660275\",\r\n    \"description\": \"tramite test 1\",\r\n    \"type\": \"Familiar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/processes/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"processes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete process by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/processes/636571d70f803307247e9b6e",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"processes",
+								"636571d70f803307247e9b6e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit process by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"tramite nuevo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/processes/63587874a083cb4a336cbaae",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"processes",
+								"63587874a083cb4a336cbaae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all type of processes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/processes/type",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"processes",
+								"type"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
