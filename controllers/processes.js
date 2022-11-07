@@ -3,8 +3,8 @@ const Process = require("../models/process");
 
 // buscar todos los tramites
 processesRouter.get("/", (request, response) => {
-  Process.find({}).then((persons) => {
-    response.json(persons);
+  Process.find({}).then((processes) => {
+    response.json(processes);
   });
 });
 
@@ -22,9 +22,9 @@ processesRouter.get("/:id", (request, response, next) => {
     .catch((error) => next(error));
   }else{
     Process.findById(request.params.id)
-    .then((person) => {
-      if (person) {
-        response.json(person);
+    .then((process) => {
+      if (process) {
+        response.json(process);
       } else {
         response.status(404).end();
       }
@@ -33,17 +33,31 @@ processesRouter.get("/:id", (request, response, next) => {
   }
 });
 
+// buscar tramites por dni
+processesRouter.get("/dni/:dni", (request, response, next) => {
+    Process.find({dni: request.params.dni})
+    .then((process) => {
+      if (process) {
+        response.json(process);
+      } else {
+        response.status(404).end();
+      }
+    })
+    .catch((error) => next(error));
+  
+});
+
 // guarda tramite
 processesRouter.post("/", (request, response, next) => {
   const body = request.body;
 
   if(body.type === "Empresa" || body.type === "Particular" || body.type === "Familiar"){
-    const person = new Process({ ...body });
+    const process = new Process({ ...body });
 
-    person
+    process
       .save()
-      .then((savedPerson) => {
-        response.json(savedPerson);
+      .then((savedProcess) => {
+        response.json(savedProcess);
       })
       .catch((error) => next(error));
   }else{
@@ -65,11 +79,11 @@ processesRouter.delete("/:id", (request, response, next) => {
 processesRouter.put("/:id", (request, response, next) => {
   const body = request.body;
 
-  const person = { ...body };
+  const process = { ...body };
 
-  Process.findByIdAndUpdate(request.params.id, person, { new: true })
-    .then((updatedPerson) => {
-      response.json(updatedPerson);
+  Process.findByIdAndUpdate(request.params.id, process, { new: true })
+    .then((updatedProcess) => {
+      response.json(updatedProcess);
     })
     .catch((error) => next(error));
 });
